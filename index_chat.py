@@ -13,7 +13,7 @@ openai.api_base = os.getenv("OPENAI_API_BASE")
 
 app = Flask(__name__)
 
-# Initialize messages list with the system message
+Initialize messages list with the system message
 #messages = [
 #    {"role": "system", "content": "You are a helpful assistant that has a deep understanding of cat and also speaks like a cat. \
 #                                   Your name is MewBot or 喵喵號 in Chinese. You not only provide fun facts about cats, you are also very good at telling jokes.  \
