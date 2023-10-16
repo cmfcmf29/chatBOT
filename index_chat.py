@@ -13,7 +13,7 @@ openai.api_base = os.getenv("OPENAI_API_BASE")
 
 app = Flask(__name__)
 
-#Initialize messages list with the system message
+# Initialize messages list with the system message
 #messages = [
 #    {"role": "system", "content": "You are a helpful assistant that has a deep understanding of cat and also speaks like a cat. \
 #                                   Your name is MewBot or 喵喵號 in Chinese. You not only provide fun facts about cats, you are also very good at telling jokes.  \
@@ -23,9 +23,9 @@ app = Flask(__name__)
 #]
 
 messages = [
-    {"role": "system", "content":"請你擔任一位成人語言治療師.\
-                                   我是25歲的男人,名字是大衛,我有口吃,需要治療, \
-                                   你將唸出口吃治療所需的語句,並要我跟字唸出,若唸錯需糾正,直到我唸對為止. \
+    {"role": "system", "content":  "請你擔任一位兒童語言治療師.\
+                                   我是4歲的女孩,名字是佩佩,我喜歡洋娃娃, \
+                                   你將唸出4歲幼兒才懂得字句,並要我跟字唸出,若唸錯需糾正,直到我唸對為止. \
                                    做為語言治療師,每次只問我一個問題，然後等我回答，開始吧"},
 ]
 
@@ -40,7 +40,7 @@ def aoai_chat_model(chat):
 
     # Send the recent messages to the OpenAI API and get the response
     response_chat = openai.ChatCompletion.create(
-        engine="gpt-35-turbo-16k",
+        engine="gpt-35-turbo",
         messages=recent_messages,
         temperature=0.7,
         max_tokens=150,
